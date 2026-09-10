@@ -134,3 +134,139 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
     margin: auto;
   }
 }
+
+
+
+/* Existing mobile rule currently hides top-actions */
+@media (max-width: 600px) {
+    .app-shell { padding-inline: 14px; }
+    .hero { padding-top: 30px; }
+    h1 { font-size: 2.65rem; }
+    .hero p { max-width: 290px; line-height: 1.45; }
+    .month-selector { width: 100%; gap: 7px; padding: 9px; }
+    .month-selector div { min-width: 0; flex: 1; }
+    .month-selector input { width: 28px; }
+    .salary-form { padding: 16px; }
+    .salary-control { grid-template-columns: auto minmax(0, 1fr); }
+    .salary-control button { grid-column: 1 / -1; width: 100%; }
+    .summary-grid { gap: 8px; }
+    .summary-card { min-height: 100px; padding: 13px; }
+    .summary-card::before { margin-bottom: 14px; }
+    .summary-card span { font-size: .75rem; }
+    .summary-card strong { font-size: 1.08rem; overflow-wrap: anywhere; }
+    .panel, .expense-form { border-radius: 5px; }
+    .section-heading h2, .form-heading h2 { font-size: 1.1rem; }
+    .filters { grid-template-columns: 1fr; }
+    .filters select { min-height: 42px; }
+    .table-wrap { margin-top: 13px; overflow: visible; }
+    
+}
+
+/* Fix: keep the top action buttons visible on phone */
+@media (max-width: 600px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .top-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100%;
+    margin-left: 0;
+    order: 2;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .top-actions button {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap;
+    min-width: 150px;
+    margin: 4px 0;
+  }
+}
+
+/* This extra rule makes the button labels stay readable on small phones */
+@media (max-width: 420px) {
+  .top-actions {
+    justify-content: center !important;
+  }
+
+  .top-actions button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+
+
+/* Prevent backup/import/export toolbar from disappearing on phone */
+@media (max-width: 767px) {
+  .backup-toolbar,
+  .action-row,
+  .button-row,
+  .export-buttons,
+  .settings-actions,
+  .app-toolbar,
+  .actionButtons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .backup-toolbar button,
+  .action-row button,
+  .button-row button,
+  .export-buttons button,
+  .settings-actions button,
+  .app-toolbar button,
+  .actionButtons button {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap;
+    min-width: 145px;
+    margin: 4px 0;
+  }
+}
+
+/* Small phone layout */
+@media (max-width: 420px) {
+  .backup-toolbar,
+  .action-row,
+  .button-row,
+  .export-buttons,
+  .settings-actions,
+  .app-toolbar,
+  .actionButtons {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  .backup-toolbar button,
+  .action-row button,
+  .button-row button,
+  .export-buttons button,
+  .settings-actions button,
+  .app-toolbar button,
+  .actionButtons button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
